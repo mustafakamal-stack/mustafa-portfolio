@@ -125,7 +125,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .hero-section h1 {
@@ -153,6 +153,93 @@ body {
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+/* Section Header & Work Cards Grid */
+.section-header {
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.work-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: var(--transition-smooth);
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: #d0d0d0;
+}
+
+.card-badge {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.work-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: var(--radius-md);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 /* Universal Dark Footer */
@@ -206,5 +293,8 @@ body {
   }
   .cta-pill-btn {
     display: none;
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
   }
 }
