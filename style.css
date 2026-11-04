@@ -1,15 +1,20 @@
+@import url('[suspicious link removed]');
+
 :root {
-  --bg-color: #fcfcfc;
-  --text-primary: #111111;
-  --text-muted: #666666;
+  --bg-color: #fbfbfd;
+  --text-main: #09090b;
+  --text-muted: #71717a;
   --card-bg: #ffffff;
-  --card-border: #e8e8e8;
-  --accent-color: #000000;
-  --dark-bg: #0d0d0d;
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --radius-lg: 20px;
-  --radius-md: 12px;
-  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-border-hover: rgba(0, 0, 0, 0.2);
+  --accent-pill: #f4f4f5;
+  --dark-bg: #09090b;
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -20,101 +25,100 @@
 
 body {
   background-color: var(--bg-color);
-  color: var(--text-primary);
-  font-family: var(--font-family);
-  line-height: 1.5;
+  color: var(--text-main);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Header & Nav */
+/* Luzia Glass Header */
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(252, 252, 252, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgba(251, 251, 253, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--card-border);
-  padding: 16px 24px;
+  padding: 16px 32px;
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
-}
-
 .brand-name {
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
 }
 
 .brand-tag {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
+  font-weight: 500;
 }
 
 .nav-menu {
   display: flex;
-  gap: 8px;
-  background: #f0f0f0;
+  gap: 4px;
+  background: #f1f1f4;
   padding: 4px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 }
 
 .nav-btn {
   border: none;
   background: transparent;
-  padding: 8px 16px;
+  padding: 8px 18px;
   font-size: 0.85rem;
-  font-weight: 500;
-  border-radius: 999px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   color: var(--text-muted);
-  transition: var(--transition-smooth);
+  transition: all 0.2s ease;
 }
 
 .nav-btn.active, .nav-btn:hover {
   background: #ffffff;
-  color: var(--text-primary);
+  color: var(--text-main);
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .cta-pill-btn {
-  background: var(--text-primary);
+  background: var(--text-main);
   color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 999px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
   border: none;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .cta-pill-btn:hover {
-  opacity: 0.85;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
-/* Main Views Router */
+/* Main Content Area */
 .main-container {
-  max-width: 1200px;
-  margin: 40px auto;
+  max-width: 1140px;
+  margin: 60px auto;
   padding: 0 24px;
-  min-height: 70vh;
 }
 
 .tab-view {
   display: none;
   opacity: 0;
-  transform: translateY(10px);
-  transition: var(--transition-smooth);
+  transform: translateY(12px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tab-view.active {
@@ -125,19 +129,24 @@ body {
 
 /* Hero Section */
 .hero-section {
-  padding: 20px 0;
+  padding: 40px 0 60px;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .hero-section h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 8px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 12px;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  font-weight: 500;
+  max-width: 650px;
+  margin-bottom: 28px;
 }
 
 .chips {
@@ -147,154 +156,146 @@ body {
 }
 
 .chip {
-  background: #eef2f6;
-  color: #334155;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 500;
+  background: #f1f1f4;
+  color: #3f3f46;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
-/* Section Header & Work Cards Grid */
+/* Work Cards (Luzia Framer Cards) */
 .section-header {
-  margin-top: 48px;
-  margin-bottom: 24px;
+  margin: 56px 0 28px;
 }
 
 .section-header h2 {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .section-header p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 28px;
 }
 
 .work-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  transition: var(--transition-smooth);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.3s ease;
 }
 
 .work-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-  border-color: #d0d0d0;
+  border-color: var(--card-border-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 .card-badge {
   display: inline-block;
-  background: #f1f5f9;
-  color: #0f172a;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin-bottom: 16px;
+  background: #f4f4f5;
+  color: #18181b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
 }
 
 .work-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 700;
-  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
 }
 
 .card-desc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-bottom: 28px;
+  line-height: 1.6;
 }
 
+/* Stat Grid Inside Cards */
 .stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  background: #f8fafc;
-  padding: 16px;
-  border-radius: var(--radius-md);
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  padding: 20px;
+  border-radius: var(--radius-lg);
 }
 
 .stat-number {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
+  font-weight: 500;
 }
 
-/* Universal Dark Footer */
+/* Luzia Signature Dark Footer */
 .dark-footer {
   background: var(--dark-bg);
   color: #ffffff;
-  padding: 80px 24px;
+  padding: 100px 24px;
   text-align: center;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-  margin-top: 80px;
-}
-
-.footer-content {
-  max-width: 600px;
-  margin: 0 auto;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: 100px;
 }
 
 .footer-content h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   margin-bottom: 16px;
 }
 
 .footer-content p {
-  color: #a0a0a0;
-  margin-bottom: 32px;
+  color: #a1a1aa;
+  font-size: 1.1rem;
+  margin-bottom: 36px;
 }
 
 .footer-btn {
   background: #ffffff;
   color: var(--dark-bg);
   border: none;
-  padding: 14px 32px;
-  border-radius: 999px;
-  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: all 0.2s ease;
 }
 
 .footer-btn:hover {
-  background: #e0e0e0;
+  background: #e4e4e7;
+  transform: scale(1.02);
 }
 
-/* Mobile Responsiveness */
+/* Mobile responsive */
 @media (max-width: 768px) {
-  .nav-menu {
-    overflow-x: auto;
-    max-width: 100%;
-  }
-  .cta-pill-btn {
-    display: none;
-  }
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
+  .hero-section h1 { font-size: 2.4rem; }
+  .work-grid { grid-template-columns: 1fr; }
+  .cta-pill-btn { display: none; }
 }
