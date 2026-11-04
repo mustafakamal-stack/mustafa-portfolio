@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mustafa Kamal | Digital Marketer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="[suspicious link removed]">
+  <link rel="preconnect" href="[suspicious link removed]" crossorigin>
+  <link href="[suspicious link removed]" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Header Navigation (Luzia Style) -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-name">Mustafa Kamal</span>
+        <span class="brand-tag">Digital Marketer</span>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-btn active" data-target="home">Home</button>
+        <button class="nav-btn" data-target="strategy">Strategy & Plans</button>
+        <button class="nav-btn" data-target="automations">Automations Lab</button>
+        <button class="nav-btn" data-target="creative">Creative Showcase</button>
+        <button class="nav-btn" data-target="certs">Certifications</button>
+        <button class="nav-btn" data-target="about-contact">About & Contact</button>
+      </nav>
+
+      <button class="cta-pill-btn" onclick="switchTab('about-contact')">Get in Touch</button>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="main-container">
+    
+    <!-- Tab 1: Home View -->
+    <section id="home" class="tab-view active">
+      <div class="hero-section">
+        <h1>Digital Marketer</h1>
+        <p class="subtitle">Paid Social Execution, Lead-Gen Strategy & Marketing Automation</p>
+        <div class="chips">
+          <span class="chip">Pashto (Native)</span>
+          <span class="chip">English (Fluent)</span>
+          <span class="chip">Persian (Fluent)</span>
+          <span class="chip">Hindi (Fluent)</span>
+          <span class="chip">German (B1)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 2: Strategy & Plans View -->
+    <section id="strategy" class="tab-view"></section>
+
+    <!-- Tab 3: Automations Lab View -->
+    <section id="automations" class="tab-view"></section>
+
+    <!-- Tab 4: Creative Showcase View -->
+    <section id="creative" class="tab-view"></section>
+
+    <!-- Tab 5: Certifications View -->
+    <section id="certs" class="tab-view"></section>
+
+    <!-- Tab 6: About & Contact View -->
+    <section id="about-contact" class="tab-view"></section>
+
+  </main>
+
+  <!-- Universal Dark Footer Banner -->
+  <footer class="dark-footer">
+    <div class="footer-content">
+      <h2>Let's build scalable growth and marketing automations together.</h2>
+      <p>Available for English-speaking roles in Germany & remote opportunities.</p>
+      <button class="footer-btn" onclick="switchTab('about-contact')">Book a Call</button>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
